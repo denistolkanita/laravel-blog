@@ -6,7 +6,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Dashboard</h1>
+                        <h1 class="m-0">Create category</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -23,10 +23,15 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
-                        <a href="{{ route('admin.category.create') }}" class="btn btn-block btn-primary col-1">Add category</a>
-                    </div>
-                    <div class="col-12">
-                        Category
+                        <form id="create-category-form" class="col-4" action="#">
+                            <div class="form-group">
+                                <label for="name">Category name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Category name">
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary" value="Create">
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
