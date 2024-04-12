@@ -23,10 +23,16 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
-                        <form id="create-category-form" class="col-4" action="#">
+                        <form id="create-category-form" class="col-4" action="{{ route('admin.category.store') }}" method="POST">
+                            @csrf
                             <div class="form-group">
-                                <label for="name">Category name</label>
-                                <input type="text" class="form-control" id="name" placeholder="Category name">
+                                <label for="category-title">Category name</label>
+                                <input type="text" class="form-control" name="title" id="category-title" placeholder="Category title">
+                                @error('title')
+                                <div class="text-danger">
+                                    Error message: {{ $message }}
+                                </div>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary" value="Create">
