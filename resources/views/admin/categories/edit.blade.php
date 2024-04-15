@@ -23,8 +23,9 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
-                        <form id="create-category-form" class="col-4" action="{{ route('admin.category.store') }}" method="POST">
+                        <form id="create-category-form" class="col-4" action="{{ route('admin.category.update', $category->id) }}" method="POST">
                             @csrf
+                            @method('PATCH')
                             <div class="form-group">
                                 <label for="category-title">Category name</label>
                                 <input type="text" class="form-control" name="title" id="category-title" placeholder="Category title"

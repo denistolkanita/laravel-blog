@@ -5,8 +5,11 @@
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1 class="m-0">Categories</h1>
+                    <div class="col-sm-6 d-flex align-items-center">
+                        <h1 class="m-0 mr-2">Categories</h1>
+                        <a href="{{ route('admin.category.edit', $category->id) }}">
+                            <i class="fas fa-pencil-alt text-success"></i>
+                        </a>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
