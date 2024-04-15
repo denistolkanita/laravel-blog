@@ -30,23 +30,15 @@
                 <div class="row">
                     <div class="col-6">
                         <table class="table table-hover text-nowrap">
-                            <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Title</th>
-                                <th>Actions</th>
-                            </tr>
-                            </thead>
                             <tbody>
-                            @foreach($categories as $category)
                                 <tr>
+                                    <td>ID</td>
                                     <td>{{ $category->id }}</td>
-                                    <td>{{ $category->title }}</td>
-                                    <td>
-                                        <a href="{{ route('admin.category.show', $category->id) }}"><i class="far fa-eye"></i></a>
-                                    </td>
                                 </tr>
-                            @endforeach
+                                <tr>
+                                    <td>Title</td>
+                                    <td>{{ $category->title }}</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
