@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Category;
+namespace App\Http\Controllers\Admin\Tag;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
+use App\Models\Tag;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -14,11 +14,11 @@ use Illuminate\Contracts\View\View;
 class ShowController extends Controller
 {
     /**
-     * @param Category $category
+     * @param Tag $tag
      * @return Application|Factory|View|\Illuminate\Foundation\Application
      */
-    public function __invoke(Category $category)
+    public function __invoke(Tag $tag)
     {
-        return view('admin.category.show', compact('category'));
+        return view('admin.tag.show', compact('tag'));
     }
 }
