@@ -52,6 +52,7 @@
 <script src="{{ asset('dist/js/adminlte.js') }}"></script>
 <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.js') }}"></script>
 <script src="{{ asset('plugins/summernote/summernote-bs4.min.js') }}"></script>
+<script src="{{ asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
 <script>
     $(document).ready(function() {
         $('#summernote').summernote({
@@ -65,6 +66,7 @@
                 ['height', ['height']]
             ]
         });
+        bsCustomFileInput.init();
     });
 </script>
 </body>

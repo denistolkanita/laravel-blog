@@ -23,7 +23,8 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
-                        <form id="create-post-form" class="col-12" action="{{ route('admin.post.store') }}" method="POST">
+                        <form id="create-post-form" class="col-12" action="{{ route('admin.post.store') }}"
+                              method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group col-4">
                                 <label for="post-title">Category name</label>
@@ -45,7 +46,31 @@
                                 </div>
                                 @enderror
                             </div>
-                            <div class="form-group">
+                            <div class="form-group col-4">
+                                <label for="preview_image">Preview image</label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="preview_image" name="preview_image">
+                                        <label class="custom-file-label" for="preview_image">Choose image</label>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">Upload</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-4">
+                                <label for="main_image">Main image</label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="main_image" name="main_image">
+                                        <label class="custom-file-label" for="main_image">Main image</label>
+                                    </div>
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">Upload</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-12">
                                 <input type="submit" class="btn btn-primary" value="Create">
                             </div>
                         </form>
