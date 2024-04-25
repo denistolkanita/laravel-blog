@@ -50,7 +50,8 @@
                                 <label for="preview_image">Preview image</label>
                                 <div class="input-group">
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="preview_image" name="preview_image">
+                                        <input type="file" class="custom-file-input" id="preview_image"
+                                               name="preview_image">
                                         <label class="custom-file-label" for="preview_image">Choose image</label>
                                     </div>
                                     <div class="input-group-append">
@@ -83,7 +84,7 @@
                             <div class="form-group col-6">
                                 <label>Select category</label>
                                 <select class="form-control" name="category_id">
-                                @foreach($categories as $category)
+                                    @foreach($categories as $category)
                                         <option value="{{ $category->id }}"
                                             {{ $category->id == old('category_id') ? ' selected' : '' }}>
                                             {{ $category->title }}
@@ -95,6 +96,18 @@
                                     Error message: {{ $message }}
                                 </div>
                                 @enderror
+                            </div>
+                            <div class="form-group col-6">
+                                <label>Select tags</label>
+                                <select class="select2" multiple="multiple" data-placeholder="Select tags"
+                                        style="width: 100%;" name="tag_ids[]">
+                                    @foreach($tags as $tag)
+                                        <option value="{{ $tag->id }}"
+                                            {{ is_array(old('tag_ids')) && in_array((string)$tag->id, old('tag_ids'), true) ? ' selected': ''}}>
+                                            {{ $tag->title }}
+                                        </option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="form-group col-12">
                                 <input type="submit" class="btn btn-primary" value="Create">

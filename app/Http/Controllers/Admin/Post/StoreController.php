@@ -20,10 +20,13 @@ class StoreController extends Controller
     public function __invoke(StoreRequest $request)
     {
         $data = $request->validated();
+        $tagIds = $data['tag_ids'] ?? [];
+        unset($data['tag_ids']);
+
         $data['preview_image'] = Storage::putFile('/images', $data['preview_image']);
         $data['main_image'] = Storage::putFile('/images', $data['main_image']);
-
-        Post::firstOrCreate($data);
+        $post = Post::firstOrCreate($data);
+        $post->tags()->attach($tagIds);
 
         return redirect()->route('admin.post.index');
     }
