@@ -8,7 +8,7 @@ use App\Models\Post;
 /**
  * Index post controller
  */
-class IndexController extends Controller
+class IndexController extends BaseController
 {
     public function __invoke()
     {

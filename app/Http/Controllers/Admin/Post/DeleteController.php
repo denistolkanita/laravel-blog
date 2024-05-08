@@ -9,7 +9,7 @@ use Illuminate\Http\RedirectResponse;
 /**
  * Delete post controller
  */
-class DeleteController extends Controller
+class DeleteController extends BaseController
 {
     /**
      * @param Post $post

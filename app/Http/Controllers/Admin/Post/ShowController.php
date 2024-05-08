@@ -11,7 +11,7 @@ use Illuminate\Contracts\View\View;
 /**
  * Category store controller
  */
-class ShowController extends Controller
+class ShowController extends BaseController
 {
     /**
      * @param Post $post
